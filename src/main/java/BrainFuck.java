@@ -13,7 +13,6 @@ public class BrainFuck {
         while (true) {
             if (program.length() == pos) break;
             {
-                //System.out.println(program.charAt(pos));
                 switch (program.charAt(pos)) {
                     case '>':
                         iterator++;

@@ -7,7 +7,7 @@ import java.util.Scanner;
 /*some brainfuck code from https://copy.sh/brainfuck/ examples and Wikipedia*/
 public class Tests {
     @Test
-    public void helloWorldLoops(){
+    public void helloWorldLoops() {
         Scanner scanner = new Scanner(System.in);
         String s = BrainFuck.run(" ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++\n" +
                 " .>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.\n" +
@@ -16,7 +16,7 @@ public class Tests {
     }
 
     @Test
-    public void inputOutputEcho(){
+    public void inputOutputEcho() {
         String input = "abc";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(",.,.,.", scanner);
@@ -24,7 +24,7 @@ public class Tests {
     }
 
     @Test
-    public void loop(){
+    public void loop() {
         String input = "a";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(",>+++++[<.>-]", scanner);
@@ -32,7 +32,7 @@ public class Tests {
     }
 
     @Test
-    public void innerLoop(){
+    public void innerLoop() {
         String input = "ab";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(",>,>+[-<<.>>>+[-<<.>>]<]", scanner);
@@ -40,7 +40,7 @@ public class Tests {
     }
 
     @Test
-    public void innerLoop2(){
+    public void innerLoop2() {
         String input = "ab";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(",>,>+[-<<.>>>++[-<<.>>]<]", scanner);
@@ -48,7 +48,7 @@ public class Tests {
     }
 
     @Test
-    public void innerLoop3(){
+    public void innerLoop3() {
         String input = "ab";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(",>,>++[-<<.>>>++[-<<.>>]<]", scanner);
@@ -56,7 +56,7 @@ public class Tests {
     }
 
     @Test
-    public void yapi(){
+    public void yapi() {
         String input = "ab";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(">  +++++ +++++ +++++ (15 digits)\n" +
@@ -73,7 +73,7 @@ public class Tests {
     }
 
     @Test
-    public void countWords(){
+    public void countWords() {
         String input = "ab ab dfg";
         Scanner scanner = new Scanner(input);
         String s = BrainFuck.run(">>>+>>>>>+>>+>>+[<<],[\n" +
@@ -90,16 +90,24 @@ public class Tests {
     }
 
     @Test
-    public void selfCode(){
+    public void selfCode() {
         String input = " +++++ +++++ +++++";
         Scanner scanner = new Scanner(input);
-        String program = "-->+++>+>+>+>+++++>++>++>->+++>++>+>>>>>>>>>>>>>>>>->++++>>>>->+++>+++>+++>+++>+++>+++>+>+>>>->->>++++>+>>>>->>++++>+>+>>->->++>++>++>++++>+>++>->++>++++>+>+>++>++>->->++>++>++++>+>+>>>>>->>->>++++>++>++>++++>>>>>->>>>>+++>->++++>->->->+++>>>+>+>+++>+>++++>>+++>->>>>>->>>++++>++>++>+>+++>->++++>>->->+++>+>+++>+>++++>>>+++>->++++>>->->++>++++>++>++++>>++[-[->>+[>]++[<]<]>>+[>]<--[++>++++>]+[<]<<++]>>>[>]++++>++++[--[+>+>++++<<[-->>--<<[->-<[--->>+<<[+>+++<[+>>++<<]]]]]]>+++[>+++++++++++++++<-]>--.<<<]";
+        String program = "-->+++>+>+>+>+++++>++>++>->+++>++>+>>>>>>>>>>>>>>>>->++++>" +
+                ">>>->+++>+++>+++>+++>+++>+++>+>+>>>->->>++++>+>>>>->>++" +
+                "++>+>+>>->->++>++>++>++++>+>++>->++>++++>+>+>++>++>->->++>++>+++" +
+                "+>+>+>>>>>->>->>++++>++>++>++++>>>>>->>>>>+++>->++++>->->->+++>>" +
+                ">+>+>+++>+>++++>>+++>->>>>>->>>++++>++>++>+>+++>->++++>>->->+++" +
+                ">+>+++>+>++++>>>+++>->++++>>->->++>++++>++>++++>>++[-[->>+[>]++" +
+                "[<]<]>>+[>]<--[++>++++>]+[<]<<++]>>>[>]++++>++++[" +
+                "--[+>+>++++<<[-->>--<<[->-<[--->>+<<[+>+++<[+>>++<" +
+                "<]]]]]]>+++[>+++++++++++++++<-]>--.<<<]";
         String s = BrainFuck.run(program, scanner);
         Assert.assertEquals(s, program);
     }
 
     @Test
-    public void helloWorld(){
+    public void helloWorld() {
         Scanner scanner = new Scanner(System.in);
         String s = BrainFuck.run(" +++++++++++++++++++++++++++++++++++++++++++++\n" +
                 " +++++++++++++++++++++++++++.+++++++++++++++++\n" +
